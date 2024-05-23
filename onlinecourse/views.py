@@ -125,7 +125,7 @@ def extract_answers(request):
 def show_exam_result(request, course_id, submission_id):
     course = get_object_or_404(Course, pk=course_id)
     submission = Submission.objects.get(id=submission_id)
-    choices = Submission.choices.all()
+    choices = submission.choices.all()
     context = {}
     total_score = 0
     for choice in choices:
